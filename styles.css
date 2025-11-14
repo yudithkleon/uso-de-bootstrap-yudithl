@@ -5,3 +5,11 @@
 .navbar img{
 margin: 10px;
 }
+
+form {   
+    display: flex; 
+    
+    justify-content: center;    
+    text-align: center;
+    width: 50%;
+}
