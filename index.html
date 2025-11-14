@@ -5,28 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Uso de bootstrap</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <!-- Navbar inicio , tareas, agregar con iconos-->
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+        <object data="./utils/logo.svg" type="image/svg+xml" width="80"></object>
+    <a class="navbar-brand" id="title-nav" href="./index.html">Navbar-Yudith Leon</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"> </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="./index.html"><img src="./utils/home.svg" alt="Icono de casa" width="30" />Home</a>
+        <a class="nav-link" href="#agregar"><img src="./utils/add.svg" alt="Icono de Agregar" width="30" />Agregar</a>
+        <a class="nav-link" href="#listar"><img src="./utils/list.svg" alt="Icono de Listar" width="30" />Listar</a>
+      
       </div>
     </div>
   </div>
 </nav>
 
+
+<!-- Formulario para agregar tarea -->
+<form id="agregar">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 <!--  lista de taras, lista de group , la tarea tener un icono para eliminarla-->
-<table class="table">
+<table class="table" id="listar">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -56,24 +77,6 @@
     </tr>
   </tbody>
 </table>
-<!-- Formulario para agregar tarea -->
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
 <!--  alert para Tarea agregada exitosamente -->
 <div class="alert alert-success" role="alert">
   A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
