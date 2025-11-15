@@ -11,107 +11,90 @@
         <title>Uso de bootstrap</title>
         <link rel="stylesheet" href="./styles.css">
     </head>
-    <body>
-        <!-- Navbar inicio , tareas, agregar con iconos-->
-        <nav class="navbar navbar-expand-lg bg-dark">
+    <body id="todo-body">
+        <!-- Navbar inicio -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <img src="./utils/logo.svg" alt="Logo de pagina" width="90">
+                <img src="./utils/logo.svg" alt="Logo" width="90">
 
-                <a class="navbar-brand" id="title-nav"
-                    href="./index.html">Navbar-Yudith Leon</a>
+                <a class="navbar-brand" href="./index.html">Navbar - Yudith eon</a>
+
                 <button class="navbar-toggler" type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"> </span>
+                    data-bs-target="#navbarNavAltMarkup">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="./index.html"><img
-                                src="./utils/home.svg" alt="Icono de casa"
-                                width="30" />Home</a>
-                        <a class="nav-link" href="#agregar"><img
-                                src="./utils/add.svg" alt="Icono de Agregar"
-                                width="30" />Agregar</a>
-                        <a class="nav-link" href="#listar"><img
-                                src="./utils/list.svg" alt="Icono de Listar"
-                                width="30" />Listar</a>
-
+                        <a class="nav-link" href="./index.html">
+                            <img src="./utils/home.svg" width="30"> Home
+                        </a>
+                        <a class="nav-link" href="#agregar">
+                            <img src="./utils/add.svg" width="30"> Agregar
+                        </a>
+                        <a class="nav-link" href="#listar">
+                            <img src="./utils/list.svg" width="30"> Listar
+                        </a>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <!-- Formulario para agregar tarea -->
-        <div class=" mb-3 tareas" aria-label="Crear nueva tarea">
-                    <h1>Agregar una tarea</h1>
-            <form id="agregar">
-                <div class="mb-3">
-                    <label for="tarea"
-                        class="form-label">Escribe aquí tu tarea</label>
-                    <input type="text" class="form-control"
-                        id="tarea">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input"
-                        id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me
-                        out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+        <!-- Contenedor principal -->
+        <div class="container mt-5">
+
+            <!-- Contenedor de alertas -->
+  <div id="alerta" class="d-flex justify-content-center position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1080; width: auto;"></div>
+
+            <!-- Formulario para agregar tarea -->
+            <div class="card p-4 mb-4 shadow tareas" id="agregar">
+                <h2 class="text-center mb-3">Agregar una tarea</h2>
+
+                <form id="todo-form">
+                    <div class="mb-3">
+                        <label for="todo-input" class="form-label">Escribe aquí
+                            tu tarea</label>
+                        <input type="text" id="todo-input" class="form-control">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit"
+                            class="btn btn-primary w-50">Agregar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de tareas -->
+            <h2 class="text-center mb-3" id="listar">Listado de tareas</h2>
+
+            <table class="table table-bordered table-striped shadow">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-body">
+                   
+                </tbody>
+            </table>
+
         </div>
 
-        <!--  lista de taras, lista de group , la tarea tener un icono para eliminarla-->
-        <table class="table" id="listar">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>@social</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!--  alert para Tarea agregada exitosamente -->
-        <div class="alert alert-success" role="alert">
-            A simple success alert with <a href="#" class="alert-link">an
-                example link</a>. Give it a click if you like.
-        </div>
-        <!-- footer  -->
-
-        <footer>
-            <nav class="navbar bg-body-tertiary">
+        <!-- Footer -->
+        <footer class="mt-5">
+            <nav class="navbar bg-light">
                 <div class="container-fluid">
                     <span class="navbar-text">
-                        Navbar text with an inline element
+                        Ejemplo de footer con Bootstrap
                     </span>
                 </div>
             </nav>
         </footer>
 
+        <script src="./scripts.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
