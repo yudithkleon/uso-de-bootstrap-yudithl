@@ -15,27 +15,31 @@ form.addEventListener("submit", (e) => {
   tareas.push({ valor, id });
   input.value = "";
 
-  console.log(tareas)
-//   mostrar();
+
+   mostrar(tareas);
 });
 
-const mostrar = () => {
-  tbody.innerHTML = "";
+const mostrar = (tareas) => {
+      console.log(tareas)
 
-  tareas.forEach((ele, index) => {
-    console.log(ele.value, index)
-    // const tr = document.createElement("tr");
 
-    // tr.innerHTML = `
-    //   <th scope="row">${index + 1}</th>  
-    //   <td>${ele.valor}</td>
-    //   <td><button class="btn btn-danger btn-sm eliminar-btn" data-id="${ele.id}">
-    //       Eliminar
-    //   </button></td>
-    // `;
+tareas.map((ele, index)=>{
+    console.log(ele.valor, index)
+})
+//   tareas.forEach((ele, index) => {
+//     console.log(ele.value, index)
+//     // const tr = document.createElement("tr");
 
-    // tbody.appendChild(tr); 
-  });
+//     // tr.innerHTML = `
+//     //   <th scope="row">${index + 1}</th>  
+//     //   <td>${ele.valor}</td>
+//     //   <td><button class="btn btn-danger btn-sm eliminar-btn" data-id="${ele.id}">
+//     //       Eliminar
+//     //   </button></td>
+//     // `;
+
+//     // tbody.appendChild(tr); 
+//   });
 };
 
 
