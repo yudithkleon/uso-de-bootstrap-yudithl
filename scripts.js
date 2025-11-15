@@ -14,6 +14,11 @@ form.addEventListener("submit", (e) => {
   const id = tareas.length + 1
   tareas.push({ valor, id });
   input.value = "";
+  alerta.innerHTML = `
+    <div class="alert alert-success" role="alert">
+      Agregada exitosamente
+    </div>
+  `;
 
   mostrar();
 });
