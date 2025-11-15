@@ -11,35 +11,50 @@ form.addEventListener("submit", (e) => {
 
   if (!valor) return;
 
-  const id = Date.now();
+  const id = tareas.length + 1
   tareas.push({ valor, id });
   input.value = "";
 
-
-   mostrar(tareas);
+  mostrar();
 });
 
-const mostrar = (tareas) => {
-      console.log(tareas)
+const mostrar = () => {
+  tbody.innerHTML = "";
 
+  tareas.forEach((ele, index) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <th scope="row">${index + 1}</th>  
+      <td>${ele.valor}</td>
+      <td><button class="btn btn-danger btn-sm eliminar-btn" data-id="${ele.id}">
+          Eliminar
+      </button></td>
+    `;
 
-tareas.map((ele, index)=>{
-    console.log(ele.valor, index)
-})
-//   tareas.forEach((ele, index) => {
-//     console.log(ele.value, index)
-//     // const tr = document.createElement("tr");
-
-//     // tr.innerHTML = `
-//     //   <th scope="row">${index + 1}</th>  
-//     //   <td>${ele.valor}</td>
-//     //   <td><button class="btn btn-danger btn-sm eliminar-btn" data-id="${ele.id}">
-//     //       Eliminar
-//     //   </button></td>
-//     // `;
-
-//     // tbody.appendChild(tr); 
-//   });
+    tbody.appendChild(tr); 
+  });
 };
 
 
+tbody.addEventListener("click", (e) => {
+  if (e.target.classList.contains("eliminar-btn")) {
+    const id = Number(e.target.dataset.id);
+    eliminar(id);
+  }
+});
+
+const eliminar = (id) => {
+  tareas = tareas.filter((t) => t.id !== id);
+
+  alerta.innerHTML = `
+    <div class="alert alert-warning" role="alert">
+      Tarea eliminada
+    </div>
+  `;
+
+  setTimeout(() => {
+    alerta.innerHTML = "";
+  }, 2000);
+
+  mostrar();
+};
